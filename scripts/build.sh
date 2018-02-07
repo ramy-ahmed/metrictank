@@ -18,7 +18,7 @@ mkdir -p $BUILDDIR
 rm -rf $BUILDDIR/*
 
 # disable cgo
-export CGO_ENABLED=0
+export CGO_ENABLED=1
 
 OUTPUT=$BUILDDIR/metrictank
 
