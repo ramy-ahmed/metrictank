@@ -378,9 +378,6 @@ func main() {
 	***********************************/
 	pluginFatal := make(chan struct{})
 	for _, plugin := range inputs {
-		if carbonPlugin, ok := plugin.(*inCarbon.Carbon); ok {
-			carbonPlugin.IntervalGetter(inCarbon.NewIndexIntervalGetter(metricIndex))
-		}
 		err = plugin.Start(input.NewDefaultHandler(metrics, metricIndex, plugin.Name()), pluginFatal)
 		if err != nil {
 			shutdown()
